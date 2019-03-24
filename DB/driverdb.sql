@@ -21,7 +21,7 @@ USE `driverdb` ;
 DROP TABLE IF EXISTS `driver` ;
 
 CREATE TABLE IF NOT EXISTS `driver` (
-  `driver_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `city` VARCHAR(100) NULL,
   `road` VARCHAR(200) NULL,
   `plate` VARCHAR(8) NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
   `description` TEXT NULL,
   `report_date` DATETIME NULL,
   `create_at` DATETIME NULL,
-  PRIMARY KEY (`driver_id`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
@@ -48,9 +48,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `driverdb`;
-INSERT INTO `driver` (`driver_id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (1, 'Denver', 'I-25', 'ABC-111', 'Saturn', 'This guy liked to swirv in traffic.', NULL, NULL);
-INSERT INTO `driver` (`driver_id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (2, 'Aurora', 'Mississippi and Sable', 'ABC-354', 'Mazda', 'Ran a red light.', NULL, NULL);
-INSERT INTO `driver` (`driver_id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (3, 'Westminster', 'I-25', 'ABC-624', 'Honda', 'Hit a pedestrian and drove off!', NULL, NULL);
+INSERT INTO `driver` (`id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (1, 'Denver', 'I-25', 'ABC-111', 'Saturn', 'This guy liked to swirv in traffic.', NULL, NULL);
+INSERT INTO `driver` (`id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (2, 'Aurora', 'Mississippi and Sable', 'ABC-354', 'Mazda', 'Ran a red light.', NULL, NULL);
+INSERT INTO `driver` (`id`, `city`, `road`, `plate`, `car`, `description`, `report_date`, `create_at`) VALUES (3, 'Westminster', 'I-25', 'ABC-624', 'Honda', 'Hit a pedestrian and drove off!', NULL, NULL);
 
 COMMIT;
 
