@@ -11,6 +11,7 @@ public interface DriverService {
 	public List<Driver> searchByRoad (String keyword);
 	public List<Driver> searchByCar (String keyword);
 	public List<Driver> searchByCity (String keyword);
+	public List<Driver> searchByDescription (String keyword);
 	public Driver findByPlate (String keyword);
 	public Driver updateDriver (Driver updated, int id);
 	public Boolean deleteDriver (int id);

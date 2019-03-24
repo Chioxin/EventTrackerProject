@@ -1,12 +1,7 @@
 package com.skilldistillery.baddriver.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,7 +79,7 @@ public class DriverServiceImpl implements DriverService {
 			repo.delete(opt.get());
 			deleted = true;
 		}
-		return null;
+		return deleted;
 	}
 
 	@Override
@@ -92,5 +87,12 @@ public class DriverServiceImpl implements DriverService {
 		return repo.saveAndFlush(newDriver);
 	}
 
+	@Override
+	public List<Driver> searchByDescription(String keyword) {
+		keyword = "%" + keyword + "%";
+		return repo.findByDescriptionLike(keyword);
+	}
+	
+	
 	
 }
