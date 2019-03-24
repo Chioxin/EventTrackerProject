@@ -10,3 +10,15 @@ Once all was complete and ready, we were to upload it to our AWS EC2 Server.
 * MySQL Workbench
 * Tomcat
 * AWS EC2 Server
+
+## REST Paths
+* GET - api/drivers - List of all drivers.
+* GET - api/drivers/{id} - A driver by ID.
+* GET - api/drivers/search/road/{keyword} - List of drivers by road.
+* GET - api/drivers/search/car/{keyword} - List of drivers by car.
+* GET - api/drivers/search/city/{keyword} - List of drivers by city.
+* GET - api/drivers/search/description/{keyword} - List of drivers by description.
+* GET - api/drivers/search/plate/{plate} - A driver by Plate Number.
+* PUT - api/drivers/{id} - Update a driver's information by ID. Send a JSON body.
+* POST - api/drivers - Create a new driver. Send a JSON body. Will return Driver with ID.
+* DEL - api/drivers/{id} - Delete a driver by ID.

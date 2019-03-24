@@ -2,9 +2,16 @@ package com.skilldistillery.baddriver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class BadDriverRestApplication {
+public class BadDriverRestApplication extends SpringBootServletInitializer {
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(BadDriverRestApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(BadDriverRestApplication.class, args);
