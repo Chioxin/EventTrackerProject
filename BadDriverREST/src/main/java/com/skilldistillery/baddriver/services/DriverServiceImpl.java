@@ -51,7 +51,7 @@ public class DriverServiceImpl implements DriverService {
 
 	@Override
 	public Driver findByPlate(String keyword) {
-		return repo.FindByPlate(keyword);
+		return repo.findByPlate(keyword);
 	}
 
 	@Override
@@ -66,6 +66,7 @@ public class DriverServiceImpl implements DriverService {
 			driver.setCar(updated.getCar());
 			driver.setDescription(updated.getDescription());
 			driver.setReportDate(updated.getReportDate());
+			repo.saveAndFlush(driver);
 		}
 		return driver;
 	}
