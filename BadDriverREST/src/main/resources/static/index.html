@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>WELCOME TO THE BAD DRIVERS DATABASE</h1>
+    <blockquote><i>Where you can rate whomever you want as terribly as you like.</i></blockquote>
+    <div id="makeReport">
+      <form name="reportDriver">
+        Car: <input type="text" name="car" value=""/><br>
+        Plate: <input type="text" name="plate" value=""/><br>
+        City: <input type="text" name="city" value=""/><br>
+        Road: <input type="text" name="road" value=""/><br>
+        Description: <input type="text" name="description" value=""/><br>
+        <!-- Date: <input type="date" name="date" value=""/><br> -->
+        <input type="submit" name="submit" value="Report Driver"/>
+      </form>
+    </div>
+    <div id="infoTable"></div>
+    <div id="searchTable"></div>
+    <div>
+      <form name="reportQuery">
+      	Reports on cars of this type: <input type="text" name="car"/><input type="submit" name="findByCar" value="Find"/><p id="byCar"></p><br>
+      	Reports on cars in this city: <input type="text" name="city"/><input type="submit" name="findByCity" value="Find"/><p id="byCity"></p><br>
+      	Reports on cars on this road: <input type="text" name="road"/><input type="submit" name="findByRoad" value="Find"/><p id="byRoad"></p><br>
+      </form>
+    </div>
+    <script src="/js/script.js" charset="utf-8"></script>
+  </body>
+</html>
