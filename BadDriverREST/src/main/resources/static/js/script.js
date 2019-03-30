@@ -25,6 +25,11 @@ var clearForm = function () {
   // document.reportDriver.date.value = '';
 }
 
+/*
+ * This function checks which button is incoming from the search
+ * location on the page. Based on the button, it sends the appropriate
+ * information to the search function.
+ */
 var performSearchForReports = function (e) {
   e.preventDefault();
   let answerLocation = e.target.nextElementSibling;
@@ -172,8 +177,8 @@ var submitBadDriver = function (e) {
 
   let errorArr = verifyInput(driver);
 
-  if (errorArr > 0) {
-    //SOMETHING IS WRONG WITH DRIVER
+  if (errorArr.length > 0) {
+    console.error('Inproper input given');
   } else {
     clearForm();
     requestPostNewDriver(driver);
