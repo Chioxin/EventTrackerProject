@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+      <form>
+        <div class="form-group form-row">
+          <div class="col-2">
+            <select class="form-control" name="searchBy" [(ngModel)]='searchBy'>
+              <option value="car" >Car</option>
+              <option value="road" >Road</option>
+              <option value="city" >City</option>
+            </select>
+          </div>
+          <div class="col">
+            <input class="form-control" type="text" name="searchString" [(ngModel)]='searchString'>
+          </div>
+        </div>
+      </form>
+
+    <div class="card" *ngFor="let driver of drivers | sortList:searchBy:searchString">
+      <div class="card-header flex-row d-flex">
+
+        <button class="btn-sm btn-primary" (click)="getDetailedView(driver.id)">Detail</button>
+
+        <div class="justify-content-start">Car: {{driver.car}}</div>
+        <div class="justify-content-start mr-auto">Plate: {{driver.plate}}</div>
+        <div class="justify-content-end">Road: {{driver.road}}</div>
+        <div class="justify-content-end">City: {{driver.city}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div *ngIf=!detailedDriver>
+      <div class="card">
+        NO DRIVER SELECTED
+      </div>
+    </div>
+
+    <div class="card" *ngIf="editDriver && editing == true">
+      <div class="card-header">
+        EDIT REPORT
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label>Car:</label>
+            <input class="form-control" type="text" name="car" [(ngModel)]="editDriver.car">
+          </div>
+          <div class="form-group">
+            <label>Plate:</label>
+            <input class="form-control" type="text" name="plate" [(ngModel)]="editDriver.plate">
+          </div>
+          <div class="form-group">
+            <label>Road:</label>
+            <input class="form-control" type="text" name="road" [(ngModel)]="editDriver.road">
+          </div>
+          <div class="form-group">
+            <label>City:</label>
+            <input class="form-control" type="text" name="city" [(ngModel)]="editDriver.city">
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <textarea class="form-control" type="text" name="description" rows="3" [(ngModel)]="editDriver.description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer flex-row d-flex">
+        <button class="btn btn-success mr-auto" (click)="updateDriver()">SAVE</button>
+        <button class="btn btn-danger" (click)="selectBackToDetail()">BACK</button>
+      </div>
+    </div>
+
+    <div class="card" *ngIf="detailedDriver && editing == false">
+      <div class="card-header flex-row d-flex">
+        <div class="mr-auto">Car: {{detailedDriver.car}}</div>
+        <div>Plate: {{detailedDriver.plate}}</div>
+      </div>
+      <div class="container-fluid">
+        Road: {{detailedDriver.road}}<br>
+        City: {{detailedDriver.city}}<br>
+        {{detailedDriver.description}}
+      </div>
+      <div class="card-footer flex-row d-flex">
+        <button class="btn btn-primary mr-auto" (click)="selectToEdit()">EDIT</button>
+        <button class="btn btn-danger" (click)="deleteDriver(detailedDriver.id)">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+ <div class="row justify-content-center">
+  <div class="col-8">
+    <form>
+      <div class="row form-group">
+        <div class="col">
+          <label>Car:</label>
+          <input class="form-control" type="text" name="car" [(ngModel)]="newDriver.car">
+        </div>
+        <div class="col">
+            <label>Plate:</label>
+            <input class="form-control" type="text" name="plate" [(ngModel)]="newDriver.plate">
+        </div>
+
+      </div>
+      <div class="row form-group">
+        <div class="col">
+            <label>Road:</label>
+            <input class="form-control" type="text" name="road" [(ngModel)]="newDriver.road">
+        </div>
+        <div class="col">
+            <label>City:</label>
+            <input class="form-control" type="text" name="city" [(ngModel)]="newDriver.city">
+        </div>
+      </div>
+      <div class="row form-group justify-content-center">
+        <div class="col-12">
+          <label>Report:</label>
+          <textarea class="form-control" name="description" rows="5" [(ngModel)]="newDriver.description"></textarea>
+        </div>
+      </div>
+      <div class="row flex-row justify-content-center">
+        <button class="btn btn-success"(click)="enterNewDriver()">SUBMIT</button>
+        <button class="btn btn-danger" [routerLink]="['/home']">CANCLE</button>
+      </div>
+    </form>
+  </div>
+</div>

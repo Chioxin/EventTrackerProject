@@ -1,0 +1,18 @@
+<div *ngIf=!detailDriver>
+  NO DRIVER SELECTED
+</div>
+
+<div class="card" *ngIf="detailDriver">
+  <div class="card-header flex-row d-flex">
+    <div class="justify-content-start">Car: {{detailDriver.car}}</div>
+    <div class="justify-content-start mr-auto">Plate Number: {{detailDriver.plate}}</div>
+    <div class="justify-content-end">Road: {{detailDriver.road}}</div>
+    <div class="justify-content-end">City: {{detailDriver.city}}</div>
+  </div>
+  <div>
+    {{detailDriver.description}}
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary">EDIT</button>
+  </div>
+</div>
