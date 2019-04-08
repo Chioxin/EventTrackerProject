@@ -1,0 +1,33 @@
+.formatHead {
+  width: 25%;
+  text-align: center;
+}
+
+.formatList {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formatDetailButton {
+  width: 10%;
+  height: 10%;
+  margin: 10px;
+  text-align: center;
+  align-self: center;
+}
+
+.formatCard {
+  position: fixed;
+}
+
+.formatNoSelection {
+  text-align: center;
+}
+
+.formatDescription {
+  text-indent: 20px;
+}
+
+.selectedDetail {
+  border-color: black;
+}

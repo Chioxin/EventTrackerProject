@@ -15,21 +15,21 @@
         </div>
       </form>
 
-    <div class="card" *ngFor="let driver of drivers | sortList:searchBy:searchString">
+    <div class="card formatList" *ngFor="let driver of drivers | sortList:searchBy:searchString">
       <div class="card-header flex-row d-flex">
 
-        <button class="btn-sm btn-primary" (click)="getDetailedView(driver.id)">Detail</button>
+        <button class="btn-sm btn-primary formatDetailButton" (click)="getDetailedView(driver.id)">Detail</button>
 
-        <div class="justify-content-start">Car: {{driver.car}}</div>
-        <div class="justify-content-start mr-auto">Plate: {{driver.plate}}</div>
-        <div class="justify-content-end">Road: {{driver.road}}</div>
-        <div class="justify-content-end">City: {{driver.city}}</div>
+        <div class="justify-content-center formatHead">Car<br>{{driver.car}}</div>
+        <div class="justify-content-center formatHead">Plate<br>{{driver.plate}}</div>
+        <div class="justify-content-center formatHead">Road<br>{{driver.road}}</div>
+        <div class="justify-content-center formatHead">City<br>{{driver.city}}</div>
       </div>
     </div>
   </div>
   <div class="col-4">
     <div *ngIf=!detailedDriver>
-      <div class="card">
+      <div class="card formatNoSelection">
         NO DRIVER SELECTED
       </div>
     </div>
@@ -76,7 +76,7 @@
       <div class="container-fluid">
         Road: {{detailedDriver.road}}<br>
         City: {{detailedDriver.city}}<br>
-        {{detailedDriver.description}}
+        <p class="formatDescription">{{detailedDriver.description}}</p>
       </div>
       <div class="card-footer flex-row d-flex">
         <button class="btn btn-primary mr-auto" (click)="selectToEdit()">EDIT</button>

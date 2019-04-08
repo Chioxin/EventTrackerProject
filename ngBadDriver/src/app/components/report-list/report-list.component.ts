@@ -17,7 +17,7 @@ export class ReportListComponent implements OnInit {
   drivers: Driver[] = [];
   public isCollapsed = false;
   searchString = '';
-  searchBy = '';
+  searchBy = 'car';
 
   // CONSTRUCTOR
 
